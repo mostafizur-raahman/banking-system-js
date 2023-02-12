@@ -9,9 +9,9 @@ document.getElementById('btn-submit').addEventListener('click', function () {
     // console.log(password);
 
     if (email === 'amarbap@gmail.com' && password === '12345') {
-        console.log('valid!');
+        window.location.href = 'bank.html'
     }
     else {
-        console.log('invalid!');
+        alert('invaild-user! try agmain!!!!!!!');
     }
 })
