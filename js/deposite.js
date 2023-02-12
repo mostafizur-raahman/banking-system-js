@@ -15,11 +15,46 @@ document.getElementById('btn-deposite').addEventListener('click', function () {
 
     depositeTotalElement.innerText = currentDepositeTotal;
 
+    // blance total 
+
+    const blanceTotalElement = document.getElementById('balance-total');
+    const previousBlanceTotalString = blanceTotalElement.innerText;
+    const previousBlanceTotal = parseFloat(previousBlanceTotalString);
+
+    const currentBlancetotal = previousBlanceTotal + newDepositeAmount;
+
+    blanceTotalElement.innerText = currentBlancetotal;
+
 
 
     // clear the depo
     depositeField.value = '';
 
+})
+
+document.getElementById('btn-widthdraw').addEventListener('click', function () {
+    const widthdtawField = document.getElementById('widthdraw-field');
+    const newWidthdrawAmountString = widthdtawField.value;
+    const newWidthdrawAmount = parseFloat(newWidthdrawAmountString);
+
+
+    const widthdrawTotalElement = document.getElementById('widthdraw-total');
+    const previousWidthdawTotalString = widthdrawTotalElement.innerText;
+    const previousWidthdawTotal = parseFloat(previousWidthdawTotalString);
+
+    const currentWidthdraw = previousWidthdawTotal + newWidthdrawAmount;
+    widthdrawTotalElement.innerText = currentWidthdraw;
+
+    const blanceTotalElement = document.getElementById('balance-total');
+    const previousBlanceTotalString = blanceTotalElement.innerText;
+    const blanceTotal = parseFloat(previousBlanceTotalString);
+
+    const newBlaceTotal = blanceTotal - newWidthdrawAmount;
+
+    blanceTotalElement.innerText = newBlaceTotal;
+
+
+    widthdtawField.value = '';
 
 
 
